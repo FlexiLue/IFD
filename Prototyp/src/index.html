@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millionairs Maker</title>
+</head>
+<body>
+    <div class="navbar mb-2 shadow-lg bg-primary text-neutral-content r">
+        <div class="px-2 mx-2">
+            <span class="text-4xl font-bold">Millionairs Maker</span>
+        </div>
+    </div>
+    <div class="m-3">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 auto-cols-min gap-4">  
+            <div>
+                <div class="card shadow-2xl">
+                    <div id="canvas" style="height: 750px; width: 100%">
+                        <canvas class="webgl"></canvas>
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <div class="card shadow-2xl bg-secondary-content">
+                    <div class="mt-3">
+                        <h2 class="text-xl text-center text-neutral font-semibold">Choose your attributes</h2>
+                    </div>
+                    <div class="divider"></div> 
+                    <div class="mx-3 mt-2">
+                        <label for="gender" class="label-text block ml-2 mb-1">Gender</label>
+                        <select class="select  w-full  " name="gender">
+                            <option disabled="disabled" selected="selected">Select your gender</option> 
+                            <option>male</option> 
+                            <option>female</option> 
+                            <option>non-binary</option>
+                        </select>
+                    </div>
+                    <div class="mx-3 mt-3">
+                        <label for="age" class="label-text block ml-2 mb-1">Age</label>
+                        <div class="mx-5">
+                            <output>24</output>
+                            <input name="age" type="range" max="100" value="60" class="range range-secondary" oninput="this.previousSibling.value = this.value"> 
+                        </div>
+                    </div>
+                    <div class="mx-3 mt-3">
+                        <label for="job" class="label-text block ml-2 mb-1">Job</label>
+                        <select class="select border-b-2 w-full   " name="job">
+                            <option disabled="disabled" selected="selected">Select your job</option> 
+                            <option>Software Developer</option> 
+                            <option>Architect</option> 
+                            <option>Doctor</option>
+                        </select>
+                    </div>
+                    <div class="mx-3 mt-3">
+                        <label for="job" class="label-text block ml-2 mb-1">Job</label>
+                        <select class="select border-b-2 w-full   " name="job">
+                            <option disabled="disabled" selected="selected">Select your job</option> 
+                            <option>Software Developer</option> 
+                            <option>Architect</option> 
+                            <option>Doctor</option>
+                        </select>
+                    </div>
+                    <div class="mx-3 mt-3">
+                        <label for="job" class="label-text block ml-2 mb-1">Job</label>
+                        <select class="select border-b-2 w-full   " name="job">
+                            <option disabled="disabled" selected="selected">Select your job</option> 
+                            <option>Software Developer</option> 
+                            <option>Architect</option> 
+                            <option>Doctor</option>
+                        </select>
+                    </div>
+                    <div class="mx-3 mt-3">
+                        <label for="job" class="label-text block ml-2 mb-1">Job</label>
+                        <select class="select border-b-2 w-full   " name="job">
+                            <option disabled="disabled" selected="selected">Select your job</option> 
+                            <option>Software Developer</option> 
+                            <option>Architect</option> 
+                            <option>Doctor</option>
+                        </select>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
