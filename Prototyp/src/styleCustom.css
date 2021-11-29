@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.gender-card{
+    @apply card shadow-md border-2 hover:border-primary-focus;
+}
