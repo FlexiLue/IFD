@@ -5,3 +5,19 @@
 .gender-card{
     @apply card shadow-md border-2 hover:border-primary-focus;
 }
+
+.selected{
+    @apply border-primary-focus;
+}
+
+.labelSelect{
+    @apply label-text block ml-2 mb-1 text-lg font-semibold;
+}
+
+.titleBox{
+    @apply bg-accent rounded-b-2xl py-5 shadow-md mb-4;
+}
+
+.titleBox > h2{
+    @apply text-3xl text-center font-semibold text-accent-content ;
+}

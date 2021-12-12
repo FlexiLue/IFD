@@ -1,10 +1,11 @@
 import '../dist/tailwind.css'
-
+/* Three.js Imports */
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { AxesHelper, DirectionalLightHelper, Vector3 } from 'three'
+
+import Chart from 'chart.js/auto';
 
 // Debug
 //const gui = new dat.GUI()
@@ -67,7 +68,6 @@ controls.autoRotate = true;
 controls.autoRotateSpeed = 1.2;
 controls.enableRotate = false
 controls.enableZoom = false
-// controls.enableDamping = true
 
 /**
  * Renderer
@@ -102,5 +102,88 @@ const tick = () =>
     window.requestAnimationFrame(tick)
 }
 
-
 tick()
+
+
+/* Chart.js */
+var ctx = document.getElementById('myChart');
+
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: [
+            'Gender',
+            'Age',
+            'Job',
+            'Home country',
+            'Source of wealth'
+          ],
+          datasets: [{
+            label: 'Your Attributes',
+            data: [0,0,0,0,0],
+            fill: true,
+            backgroundColor: 'rgb(224, 168, 46, 0.4)',
+            borderColor: 'rgb(24, 24, 48)',
+            pointBackgroundColor: 'rgb(224, 168, 46)',
+            pointBorderColor: 'rgb(224, 168, 46)',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(224, 168, 46)'
+          }]
+    },
+    options: {
+        elements: {
+          line: {
+            borderWidth: 2
+          }
+        },
+        plugins: {
+            legend: {
+                display: false,
+            },
+        },
+        scales: {
+            r: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    },
+});
+
+
+/* Adjusting Chart to slider */
+var ageSlider = document.getElementById("age");
+ageSlider.addEventListener("change", () => {
+    myChart.data.datasets[0].data[1] = ageSlider.value;
+    myChart.update();
+})
+
+
+/* Making selection avaliable for genderCards */
+var selectedGender = document.querySelector('.gender-card + .selected');
+var genderCards = document.getElementsByClassName("gender-card");
+
+for(let genderCard of genderCards){
+    genderCard.addEventListener("click", () => {
+        if(selectedGender != genderCard){
+            genderCard.classList.add('selected');
+            selectedGender.classList.remove('selected');
+            selectedGender = genderCard;
+            myChart.data.datasets[0].data[0] = genderCard.dataset.value;
+            myChart.update();
+        }
+    })   
+}
+
+var selectFields = document.querySelectorAll('select')
+console.log(selectFields)
+for (let selectField of selectFields) {
+    selectField.addEventListener("change", () => {
+        let selectedValue = parseInt(selectField.selectedOptions[0].dataset.value);
+        let arrayPosition = parseInt(selectField.dataset.arrayPosition);
+        if(selectedValue && arrayPosition){
+            myChart.data.datasets[0].data[arrayPosition] = selectedValue;
+            myChart.update();
+        }
+    })
+}
