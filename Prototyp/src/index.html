@@ -14,7 +14,7 @@
     <div class="m-3">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 auto-cols-min gap-4 justify-center items-stretch"> 
             <div class="card shadow-2xl">
-                <div id="canvas" style="height: 750px; width: 100%">
+                <div id="canvas" style="height: 85vh; width: 100%">
                     <canvas class="webgl"></canvas>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="grid grid-flow-row content-between h-full">
                     <div class="mx-3 mt-2">
                         <div class="grid grid-cols-3 text-center gap-2">
-                            <div class="gender-card" data-value="70">
+                            <div class="gender-card" data-value="87.9">
                                 <div class="card-title">
                                     <p>Man</p>
                                 </div>
@@ -33,7 +33,7 @@
                                     <svg fill="none" height="32" width="32" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m15 15.5c0 3.5899-2.9101 6.5-6.5 6.5-3.58985 0-6.5-2.9101-6.5-6.5s2.91015-6.5 6.5-6.5c3.5899 0 6.5 2.9101 6.5 6.5z"/><path d="m15 2h7v7"/><path d="m13.5 10.5 8.5-8.5"/></g></svg>
                                 </div>
                             </div>
-                            <div class="gender-card selected" data-value="25">
+                            <div class="gender-card selected" data-value="12.1">
                                 <div class="card-title">
                                     <p>Woman</p>
                                 </div>
@@ -41,7 +41,7 @@
                                     <svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m18.5 8.5c0 3.5899-2.9101 6.5-6.5 6.5-3.58985 0-6.5-2.9101-6.5-6.5 0-3.58985 2.91015-6.5 6.5-6.5 3.5899 0 6.5 2.91015 6.5 6.5z"/><path d="m7.5 19h9"/><path d="m12 22v-7"/></g></svg>
                                 </div>
                             </div>
-                            <div class="gender-card" data-value="23">
+                            <div class="gender-card" data-value="0">
                                 <div class="card-title">
                                     <p>Non-binary</p>
                                 </div>
@@ -59,42 +59,44 @@
                         </div>
                     </div>
                     <div class="mx-3 mt-3">
-                        <label for="job" class="labelSelect">Job</label>
+                        <label for="job" class="labelSelect">Sector of Work</label>
                         <select class="select border-b-2 w-full" name="job" data-array-position="2">
-                            <option disabled="disabled" selected="selected">Select your job</option> 
-                            <option data-value="70">Software Developer</option> 
-                            <option data-value="20">Architect</option> 
-                            <option data-value="10">Doctor</option>
+                            <option disabled="disabled" selected="selected">Select your Sector of Work</option> 
+                            <option data-value="39.61">Banking and finance</option> 
+                            <option data-value="20.57">Industrial conglomerats</option> 
+                            <option data-value="14.42">Real estate</option>
+                            <option data-value="13.46">Technology</option>
+                            <option data-value="11.92">Manufacturing</option>
                         </select>
                     </div>
                     <div class="mx-3 mt-3">
                         <label for="homeCountry" class="labelSelect">Home country</label>
                         <select class="select border-b-2 w-full" name="homeCountry" data-array-position="3">
                             <option disabled="disabled" selected="selected">Select your home country</option> 
-                            <option data-value="80">Canada</option>
-                            <option data-value="70">China</option> 
-                            <option data-value="20">Brazil</option>
-                            <option data-value="30">France</option>
-                            <option data-value="90">Germany</option>
-                            <option data-value="50">Hong Kong</option>
-                            <option data-value="60">India</option>
-                            <option data-value="85">Italy</option>
-                            <option data-value="22">Russia</option>
-                            <option data-value="80">Saudi Arabia</option>
-                            <option data-value="90">Singapore</option>
-                            <option data-value="68">Switzerland</option>
-                            <option data-value="22">United Arab Emirates</option>
-                            <option data-value="63">United Kingdom</option>
-                            <option data-value="80">United States</option> 
+                            <option data-value="1.64">Canada</option>
+                            <option data-value="12.79">China</option> 
+                            <option data-value="1.64">Brazil</option>
+                            <option data-value="2">France</option>
+                            <option data-value="5.43">Germany</option>
+                            <option data-value="3.46">Hong Kong</option>
+                            <option data-value="3.24">India</option>
+                            <option data-value="1.87">Italy</option>
+                            <option data-value="3.74">Russia</option>
+                            <option data-value="2">Saudi Arabia</option>
+                            <option data-value="1.56">Singapore</option>
+                            <option data-value="3.34">Switzerland</option>
+                            <option data-value="1.56">United Arab Emirates</option>
+                            <option data-value="3.71">United Kingdom</option>
+                            <option data-value="28.93">United States</option> 
                         </select>
                     </div>
                     <div class="mx-3 mt-3">
                         <label for="job" class="labelSelect">Source of wealth</label>
                         <select class="select border-b-2 w-full" name="job" data-array-position="4">
                             <option disabled="disabled" selected="selected">Select your source of wealth</option> 
-                            <option data-value=10>Inherited</option> 
-                            <option data-value=30>Self-made</option> 
-                            <option data-value=40>Inherited/self-made</option>
+                            <option data-value="11.1">Inherited</option> 
+                            <option data-value="60.1">Self-made</option> 
+                            <option data-value="28.8">Inherited/self-made</option>
                         </select>
                     </div>
                 </div>
@@ -103,13 +105,13 @@
                 <div class="titleBox">
                     <h2>Result</h2>
                 </div>
-                <div class="card shadow-md m-5 flex flex-row items-center">
-                    <div>
-                        <h3 class="text-xl text-center">Your similarity with the top 1000 richest people is</h3>
-                        <p class="text-4xl font-bold text-center text-primary">30%</p>
+                <div class="card shadow-md m-5 block md:flex flex-row items-center">
+                    <div class="">
+                        <h3 class="text-xl text-center">Your similarity with the top 3204 richest people is</h3>
+                        <p class="text-4xl font-bold text-center text-primary"><span id="percentage">0</span>%</p>
                     </div>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" style="height:200px; width:200px" viewBox="0 0 835.213 613.098">
+                        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" style="height:200px; width:200px" viewBox="0 0 835.213 613.098">
                             <g id="undraw_investing_re_bov7" transform="translate(0)">
                               <path id="Pfad_2" data-name="Pfad 2" d="M970.8,754.84l.951-1.759c-12.753-6.9-28.626-15.481-36.916-29.567-8.172-13.886-8.356-32.743-.479-49.211,6.7-14.016,19.018-26.572,35.611-36.313,3.273-1.921,6.709-3.742,10.031-5.5,8.031-4.256,16.336-8.658,23.184-14.9,9.432-8.6,16.568-23.035,11.249-35.891a23.856,23.856,0,0,0-20.678-14.467l-.113,2a21.861,21.861,0,0,1,18.948,13.248c4.943,11.947-1.839,25.5-10.754,33.636-6.661,6.074-14.852,10.415-22.773,14.613-3.342,1.771-6.8,3.6-10.108,5.546-16.938,9.943-29.526,22.8-36.4,37.174-8.16,17.061-7.946,36.637.559,51.089C941.685,739.095,957.828,747.826,970.8,754.84Z" transform="translate(-181.366 -141.742)" fill="#f1f1f1"/>
                               <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="17.5" cy="8.5" rx="17.5" ry="8.5" transform="translate(782.213 419.025)" fill="#f1f1f1"/>

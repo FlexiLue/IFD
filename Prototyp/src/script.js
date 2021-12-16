@@ -31,7 +31,7 @@ loader.load( './models/fourthTry.glb', function ( gltf ) {
 
 
 const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-scene.add( light );
+scene.add(light);
 
 /**
  * Sizes
@@ -65,7 +65,7 @@ scene.add(camera)
 const controls = new OrbitControls(camera, canvas)
 controls.target = new THREE.Vector3(0,0.5,0)
 controls.autoRotate = true;
-controls.autoRotateSpeed = 1.2;
+controls.autoRotateSpeed = 1.6;
 controls.enableRotate = false
 controls.enableZoom = false
 
@@ -107,7 +107,6 @@ tick()
 
 /* Chart.js */
 var ctx = document.getElementById('myChart');
-
 var myChart = new Chart(ctx, {
     type: 'radar',
     data: {
@@ -144,7 +143,7 @@ var myChart = new Chart(ctx, {
         scales: {
             r: {
                 suggestedMin: 0,
-                suggestedMax: 100
+                suggestedMax: 90
             }
         }
     },
@@ -154,8 +153,11 @@ var myChart = new Chart(ctx, {
 /* Adjusting Chart to slider */
 var ageSlider = document.getElementById("age");
 ageSlider.addEventListener("change", () => {
-    myChart.data.datasets[0].data[1] = ageSlider.value;
+    let age = ageSlider.value;
+    let points = 100-Math.abs(66.5-age);
+    myChart.data.datasets[0].data[1] = points;
     myChart.update();
+    updatePercentage();
 })
 
 
@@ -171,6 +173,7 @@ for(let genderCard of genderCards){
             selectedGender = genderCard;
             myChart.data.datasets[0].data[0] = genderCard.dataset.value;
             myChart.update();
+            updatePercentage();
         }
     })   
 }
@@ -179,11 +182,24 @@ var selectFields = document.querySelectorAll('select')
 console.log(selectFields)
 for (let selectField of selectFields) {
     selectField.addEventListener("change", () => {
-        let selectedValue = parseInt(selectField.selectedOptions[0].dataset.value);
-        let arrayPosition = parseInt(selectField.dataset.arrayPosition);
+        let selectedValue = parseFloat(selectField.selectedOptions[0].dataset.value);
+        let arrayPosition = parseFloat(selectField.dataset.arrayPosition);
         if(selectedValue && arrayPosition){
             myChart.data.datasets[0].data[arrayPosition] = selectedValue;
             myChart.update();
+            updatePercentage();
         }
     })
+}
+
+function updatePercentage (){
+    let allPoints = 0;
+    let currentPoints = 0;
+    myChart.data.datasets[0].data.forEach(element => {
+        if(element > 0){
+            allPoints += 100;
+            currentPoints += parseFloat(element);
+        }
+    })
+    document.getElementById("percentage").innerHTML = Math.round(currentPoints/allPoints*100);
 }
