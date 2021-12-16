@@ -149,7 +149,6 @@ var myChart = new Chart(ctx, {
     },
 });
 
-
 /* Adjusting Chart to slider */
 var ageSlider = document.getElementById("age");
 ageSlider.addEventListener("change", () => {
